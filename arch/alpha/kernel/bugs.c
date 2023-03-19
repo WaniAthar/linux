@@ -19,27 +19,18 @@ static int cpu_is_ev6_or_later(void)
 ssize_t cpu_show_meltdown(struct device *dev,
 			  struct device_attribute *attr, char *buf)
 {
-	if (cpu_is_ev6_or_later())
-		return sprintf(buf, "Vulnerable\n");
-	else
-		return sprintf(buf, "Not affected\n");
+	(cpu_is_ev6_or_later())? return sprintf(buf, "Vulnerable\n"):return sprintf(buf, "Not affected\n");
 }
 
 ssize_t cpu_show_spectre_v1(struct device *dev,
                             struct device_attribute *attr, char *buf)
 {
-	if (cpu_is_ev6_or_later())
-		return sprintf(buf, "Vulnerable\n");
-	else
-		return sprintf(buf, "Not affected\n");
+	(cpu_is_ev6_or_later())? return sprintf(buf, "Vulnerable\n"):return sprintf(buf, "Not affected\n");
 }
 
 ssize_t cpu_show_spectre_v2(struct device *dev,
 			    struct device_attribute *attr, char *buf)
 {
-	if (cpu_is_ev6_or_later())
-		return sprintf(buf, "Vulnerable\n");
-	else
-		return sprintf(buf, "Not affected\n");
+	(cpu_is_ev6_or_later())? return sprintf(buf, "Vulnerable\n"):return sprintf(buf, "Not affected\n");
 }
 #endif
